@@ -13,7 +13,9 @@ export const Contact = () => {
     email: '',
     message: ''
   }
+  // console.log(formInitialDetails)
   const [formDetails, setFormDetails] = useState(formInitialDetails);
+  const [status, setStatus] = useState('')
 
   const onFormUpdate = (category, value) => {
       setFormDetails({
@@ -23,7 +25,6 @@ export const Contact = () => {
   }
 
   const handleSubmit = async (e) => {
-    // console.log(formDetails)
     e.preventDefault();
     emailjs
     .sendForm('service_v4vpy14', 'template_2ell9pq', form.current, {
@@ -31,10 +32,13 @@ export const Contact = () => {
     })
     .then(
       (result) => {
-        console.log(result)
+        // console.log(result)
+        setStatus(result)
         console.log('SUCCESS!');
+        setFormDetails(formInitialDetails);
       },
       (error) => {
+        setStatus(error)
         console.log('FAILED...', error);
       },
     );
@@ -58,7 +62,6 @@ export const Contact = () => {
                 <h2>Get In Touch</h2>
                 <form onSubmit={handleSubmit} ref={form}>
                   <Row>
-                   
                     <Col size={12} sm={6} className="px-1">
                       <input type="text" value={formDetails.name} placeholder="Name" onChange={(e) => onFormUpdate('name', e.target.value)}/>
                     </Col>
@@ -67,7 +70,6 @@ export const Contact = () => {
                     </Col>
                     <Col size={12} className="px-1">
                       <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      {/* <button type="submit"><span>{buttonText}</span></button> */}
                       <Button type="submit" variant="primary"style={{ marginLeft: "10px" }}>send</Button>
                     </Col>
                     {
@@ -75,6 +77,12 @@ export const Contact = () => {
                       <Col>
                         <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                       </Col>
+                    }
+                    {
+                      status.status == 200 &&
+                   
+                        <p className="success">Successfully send</p>
+                 
                     }
                   </Row>
                 </form>

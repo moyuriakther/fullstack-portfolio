@@ -2,10 +2,11 @@ import { Container, Row } from "react-bootstrap";
 import Project from "../components/Project";
 import Particle from "../components/Particle";
 import { useGetAllProjectsQuery } from "../services/api/apiSlice";
+// import { projectsInfos } from "../data/projects";
 
 function Projects() {
   const {data: projects} = useGetAllProjectsQuery()
- 
+//  console.log(projectsInfos)
   return (
     <Container fluid className="project-section" id="projects">
       <Particle />
@@ -23,6 +24,13 @@ function Projects() {
             // </Col>
           ))}
         </Row>
+        {/* <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {projectsInfos?.map((project) => (
+            // <Col md={4} className="project-card">
+            <Project project={project} key={project.id} />
+            // </Col>
+          ))}
+        </Row> */}
       </Container>
     </Container>
   );

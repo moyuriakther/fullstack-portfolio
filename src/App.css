@@ -262,12 +262,12 @@ button:focus {
   background-image: var(--image-gradient), url(./assets/images/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding-bottom: 10px !important;
+  padding-top: 10px !important;
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
+  padding: 3rem 0 0rem !important;
   color: whitesmoke;
   text-align: left;
 }
@@ -309,7 +309,7 @@ button:focus {
 
 .myAvtar {
   justify-content: center !important;
-  padding-top: 9em !important;
+  padding-top: 2em !important;
 }
 
 @media (max-width: 767px) {
@@ -321,32 +321,33 @@ button:focus {
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
 }
 
 .home-about-description {
   color: white !important;
-  padding-top: 100px !important;
-  padding-bottom: 20px !important;
+  /* padding-top: 30px !important; */
+  padding-top: 2em !important;
+  padding-bottom: 10px !important;
   text-align: center;
 }
 
 .home-about-body {
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: 1.2em !important;
   text-align: left;
 }
 
 .home-about-social {
   text-align: center !important;
-  padding-top: 25px;
+  padding-top: 10px;
   color: white !important;
 }
 
 .home-about-social-links {
   justify-content: center !important;
-  padding-top: 15px !important;
+  padding-top: 5px !important;
   display: inline-block !important;
   position: relative !important;
   padding-inline-start: 0 !important;
@@ -448,16 +449,16 @@ button:focus {
 /* --------- */
 .project-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 30px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
 }
 
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important; 
   height: auto !important;
 }
 
@@ -469,10 +470,37 @@ button:focus {
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
+
+.card-img-top {
+  /* padding: 20px !important; */
+  opacity: 0.8 !important;
+  border-radius: 5px !important;
+}
+
+.project-card-view img {
+  height: 200px; 
+  object-fit: cover; 
+  width: 100%;  
+}
+
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
   box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+}
+@media (max-width: 768px) {
+  .project-card {
+    margin-bottom: 15px;
+  }
+  .card-img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .description-text {
+    font-size: 14px;
+  }
 }
 
 .blog-card {
@@ -513,12 +541,6 @@ button:focus {
   box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
 }
 
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
-}
-
 .blog-img {
   padding: 0px !important;
   opacity: 0.8 !important;
@@ -553,14 +575,14 @@ button:focus {
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
 }
 
 .tech-icons {
-  font-size: 4.5em !important;
+  font-size: 1.5em !important;
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
@@ -572,6 +594,11 @@ button:focus {
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
+}
+
+.tech-icons p{
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 @media (max-width: 767px) {
@@ -754,7 +781,7 @@ button:focus {
 /************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #4A2FBD -5.91%, #a24dd386 111.58%);
-  padding: 60px 0 200px 0;
+  padding: 30px 0 30px 0;
 }
 .contact img {
   width: 92%;
@@ -824,37 +851,147 @@ button:focus {
 }
 
 /* BlogDetail.css */
+/* Project details page */
+.project-detail-img{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 5px !important;
+}
+
+/* Custom styles for ProjectDetail component */
+
+/* For responsive text and layout */
+.text-white-800 {
+  color: #ffffff;
+}
+
+.text-white-600 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Styling for tech icons */
+.tech-icons {
+  text-align: center;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Custom Button styling */
+.btn-primary {
+  background-color: #ff3b30;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ff6347;
+}
+
+.btn-dark {
+  background-color: #2f2f2f;
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #4f4f4f;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .tech-icons {
+    font-size: 0.875rem; /* Smaller font size for technologies */
+  }
+
+  .home-section {
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .project-detail-img {
+    height: auto;
+  }
+}
+
+/* blog detail style */
+/* Container styles */
 .blog-container {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Blog Card Styling */
 .blog-card {
+  background-color: #1a202c; /* Dark background for contrast */
   border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Card shadow effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  color: white;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); /* Subtle hover effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
 }
 
+/* Blog Title Styling */
 .blog-title {
-  color: #007bff;
+  font-family: 'Georgia', serif;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-.blog-description {
-  color: #333;
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
+/* Meta Info Styling */
 .blog-meta {
-  color: #777;
+  color: #d1d5db; /* Light gray text */
   font-size: 0.875rem;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+/* Blog Description / Content */
+.blog-description {
+  color: #e5e7eb; /* Off-white for readability */
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-top: 15px;
+}
+
+/* Anchor Link Styling */
+.blog-detail-container article a {
+  color: #60a5fa; /* Light blue links */
+  text-decoration: underline;
+}
+
+.blog-detail-container article a:hover {
+  color: #3b82f6; /* Darker blue on hover */
+}
+
+/* List Styling */
+.blog-detail-container ul {
+  list-style: disc inside;
+  margin-left: 1.5rem;
+}
+
+.blog-detail-container p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
 }

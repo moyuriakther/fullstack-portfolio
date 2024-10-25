@@ -12,15 +12,15 @@ import {
   AiOutlineUser,
   AiOutlineArrowDown,
 } from "react-icons/ai";
-import { useGetResumeQuery } from "../services/api/apiSlice";
+// import { useGetResumeQuery } from "../services/api/apiSlice";
 // import logo from "../assets/icons/logo.png";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColor, updateNavbar] = useState(false);
   
-  const {data} = useGetResumeQuery()
-  const resume = data?.data?.resume;
+  // const {data} = useGetResumeQuery()
+  const resume = `https://drive.google.com/file/d/17wu1TJpdDUr64wq__4dIfBvsRZIn2Q6X/view`;
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -83,6 +83,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 href={resume}
+                target="_blank"
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineArrowDown style={{ marginBottom: "2px" }} /> Download

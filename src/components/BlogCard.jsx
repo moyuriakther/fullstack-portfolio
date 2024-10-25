@@ -8,7 +8,6 @@ const BlogCard = ({blog}) => {
     const handleViewDetails = (blogId) => {
         navigate(`/${blogId}/blog`);
       };
-      
     return (
         <Col xs={12} sm={6} md={4} lg={3} key={blog.id} className="project-card">
         <Card className="mb-4 project-card-view" style={{ cursor: 'pointer' }}>
